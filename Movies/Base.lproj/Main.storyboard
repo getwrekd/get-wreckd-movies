@@ -166,6 +166,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="searchTabelView" destination="Eqm-cM-QEd" id="UIb-de-9Mz"/>
                         <outlet property="searchText" destination="Lqy-Q7-yZu" id="4TF-NE-xNm"/>
                     </connections>
                 </viewController>

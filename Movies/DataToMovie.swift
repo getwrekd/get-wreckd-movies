@@ -10,8 +10,19 @@ import Foundation
 import SwiftyJSON
 
 class DataToMovie {
-    static func buildMovies(json: JSON) -> Void {
-        // @TODO have this return [Movie] array to show in our search view
-        print(json)
+    static func buildMovies(json: JSON) -> [Movie] {
+        var results: [Movie] = []
+        let searchResults = json["Search"]
+        
+        for (_, movie) in searchResults {
+            let id = movie["imdbID"].string
+            let title = movie["Title"].string
+            let year = movie["Year"].string
+            let imageUrl = movie["Poster"].string
+            
+            results.append(Movie(id: id!, title: title!, year: year!, imageUrl: imageUrl!))
+        }
+        
+        return results;
     }
 }
