@@ -14,6 +14,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // store array of Movies to display
     var favoriteMovies: [Movie] = []
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SearchViewSegue" {
+            let controller = segue.destination as! SearchViewController
+            
+            // this could be named anything, set the ViewController to be the delegate
+            // property on the SearchViewController
+            controller.delegate = self
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return favoriteMovies.count
     }

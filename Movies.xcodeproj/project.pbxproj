@@ -85,6 +85,7 @@
 			children = (
 				34B162F21EC29FD00029E723 /* AppDelegate.swift */,
 				34B162F41EC29FD00029E723 /* ViewController.swift */,
+				34B163081EC2B17F0029E723 /* SearchViewController.swift */,
 				34B162F61EC29FD00029E723 /* Main.storyboard */,
 				34B162F91EC29FD00029E723 /* Assets.xcassets */,
 				34B162FB1EC29FD00029E723 /* LaunchScreen.storyboard */,
@@ -92,7 +93,6 @@
 				34B163041EC2A31D0029E723 /* CustomTableViewCell.swift */,
 				34B163061EC2A4980029E723 /* Movie.swift */,
 				34B1630A1EC3A8C80029E723 /* HTTPHandler.swift */,
-				34B163081EC2B17F0029E723 /* SearchViewController.swift */,
 				34D325AB1EC3B32100205F1A /* DataToMovie.swift */,
 			);
 			path = Movies;

@@ -9,6 +9,7 @@
 import Foundation
 import SwiftyJSON
 
+// this class converts JSON data into a proper Movie type
 class DataToMovie {
     static func buildMovies(json: JSON) -> [Movie] {
         var results: [Movie] = []

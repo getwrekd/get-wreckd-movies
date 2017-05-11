@@ -70,7 +70,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Find Movies"/>
                                 <connections>
-                                    <segue destination="Qkw-pJ-T2L" kind="show" id="21U-8f-0YW"/>
+                                    <segue destination="Qkw-pJ-T2L" kind="show" identifier="SearchViewSegue" id="21U-8f-0YW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -138,11 +138,13 @@
                                                     <rect key="frame" x="288" y="59" width="46" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Fav"/>
+                                                    <connections>
+                                                        <action selector="addFavoriteWithSender:" destination="Qkw-pJ-T2L" eventType="touchDown" id="CEr-EV-5hg"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="favButton" destination="pnB-6e-UGp" id="lGo-Sy-dO1"/>
                                             <outlet property="movieImageView" destination="KcP-ih-xv4" id="JWQ-7V-QTq"/>
                                             <outlet property="movieTitle" destination="aTC-4d-lme" id="vql-52-ZBq"/>
                                             <outlet property="movieYear" destination="1ng-Qc-D5e" id="nXh-ja-uCy"/>

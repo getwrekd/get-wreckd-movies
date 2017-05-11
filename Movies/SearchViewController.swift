@@ -14,6 +14,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet var searchText: UITextField!
     @IBOutlet var searchTabelView: UITableView!
     
+    // rm reference if the ViewController goes away for memory mgmt
+    weak var delegate: ViewController?
+    
     var searchResults: [Movie] = []
     
     @IBAction func search(sender: UIButton) {
@@ -22,6 +25,11 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         if searchTerm.characters.count >= 3 {
             getMoviesBySearchTerm(term: searchTerm)
         }
+    }
+    
+    @IBAction func addFavorite(sender: UIButton) {
+        let movie = searchResults[sender.tag]
+        self.delegate?.favoriteMovies.append(movie)
     }
     
     func getMoviesBySearchTerm(term: String) -> Void {
@@ -50,16 +58,14 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0.1
+        return 0.2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let movieCell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomTableViewCell
-        
         let index = indexPath.row
         
-        movieCell.favButton.tag = index
-        
+        movieCell.favButton?.tag = index
         movieCell.movieTitle?.text = searchResults[index].title
         movieCell.movieYear?.text = searchResults[index].year
         
